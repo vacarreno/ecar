@@ -1,0 +1,247 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "navbar"
+    "select"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  grid-area: navbar;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Menú hamburguesa */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* Menú oculto */
+.nav-links {
+  display: none; /* Ocultar menú en pantallas pequeñas */
+  list-style: none;
+  background-color: #007bff;
+  padding: 10px;
+}
+
+.nav-links.active {
+  display: block; /* Mostrar menú cuando esté activo */
+}
+
+.nav-links li {
+  margin: 10px 0;
+}
+
+.nav-links a {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* Select */
+.select-container {
+  grid-area: select;
+  padding: 20px;
+  text-align: center;
+  background-color: #3c5e81;
+}
+
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #333;
+  border-radius: 5px;
+  
+}
+
+/* Main */
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pagination a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination a:disabled {
+  pointer-events: none;
+  color: #aaa;
+  background-color: #f9f9f9;
+  border-color: #ddd;
+}
+
+.centrar-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.boton {
+  background: #ffd600;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Transición suave para el cambio de color */
+}
+.boton:hover {
+  background: #ff9800; /* Nuevo color cuando el mouse está encima del botón */
+}
+
+img {
+  width: 100%;
+  max-width: 500px; /* Máximo tamaño */
+  height: auto; /* Mantener proporción */
+}
+
+/* Media Query para pantallas mayores a 576px */
+@media screen and (min-width: 576px) {
+  body {
+    grid-template-areas:
+      "navbar select"
+      "navbar main"
+      "footer main";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  nav {
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Ordena de arriba hacia abajo */
+    list-style: none; /* Quita los puntos de la lista */
+    display: block; /* Mostrar menú */
+  }
+  /* Estilo de los ítems del menú */
+  .nav li {
+    margin: 5px 0; /* Espaciado entre elementos */
+    padding: 10px;
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color de texto */
+    text-align: center; /* Alinea el texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de clic */
+    transition: background-color 0.3s; /* Efecto al pasar el ratón */
+  }
+
+  /* Efecto hover */
+  .nav li:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+  }
+
+  .menu-icon {
+    display: none; /* Ocultar menú hamburguesa */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    display: block; /* Mostrar menú */
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .select-container {
+    text-align: left;
+    padding-left: 20px;
+  }
+  img {
+    max-width: 200px; /* Cambia el tamaño aún más */
+  }
+}

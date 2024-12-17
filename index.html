@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carro de Compras</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">Electric Cars</div>
+      <!-- Menú hamburguesa -->
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- Menú de navegación -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Catálogos</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Select -->
+    <div class="select-container">
+      <select>
+        <option value="opcion1">Precio</option>
+        <option value="opcion2">Color</option>
+        <option value="opcion3">Otros Filtros</option>
+      </select>
+    </div>
+
+    <!-- Main -->
+    <div>
+      <main>
+        <div class="product">
+          <img src="./assets/img/Electric-Car-Transparent-HQ.png" />
+          <br />
+          <h3>Model: City Car</h3>
+          <br />
+          <button class="boton">Ver Más</button>
+        </div>
+
+        <div class="product">
+          <img src="./assets/img/Electric-Car-Transparent-HQ.png" />
+          <br />
+          <h3>Model: City Car</h3>
+          <br />
+          <button class="boton">Ver Más</button>
+        </div>
+
+        <div class="product">
+          <img src="./assets/img/Electric-Car-Transparent-HQ.png" />
+          <br />
+          <h3>Model: City Car</h3>
+          <br />
+          <button class="boton">Ver Más</button>
+        </div>
+        <div class="product">
+          <img src="./assets/img/Electric-Car-Transparent-HQ.png" />
+          <br />
+          <h3>Model: City Car</h3>
+          <br />
+          <button class="boton">Ver Más</button>
+        </div>
+        <div class="product">
+          <img src="./assets/img/Electric-Car-Transparent-HQ.png" />
+          <br />
+          <h3>Model: City Car</h3>
+          <br />
+          <button class="boton">Ver Más</button>
+        </div>
+      </main>
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
